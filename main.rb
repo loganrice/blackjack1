@@ -21,7 +21,22 @@ end
 
 def deal(deck)
   card = deck.to_a.sample
+  deck.delete(card[0])
+  return card
 end
+
+def winner?(hand1, hand2)
+  if hand1 > hand2
+    hand1
+  else
+    hand2
+  end
+end
+
+def hand_value(hand)
+
+end
+
 
 def black_jack
   deck = initialize_deck
@@ -29,6 +44,8 @@ def black_jack
   computer_hand = []
   2.times { player_hand << deal(deck) }
   2.times { computer_hand << deal(deck) }
+
+  # winner?(player_hand, computer_hand)
   binding.pry
 end
 
